@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mangement System</title>
+    <style>
+        *{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+        img{
+            border-radius: 50%;
+            margin-left: 600px;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/272274356_146791817732289_4949843533722317882_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZZkgTJEOPtwAX_0i5uw&_nc_ht=scontent-sin6-3.xx&oh=00_AT-Bz8RI9lWNSstTapbPfcUdCX1upusoi89Sdl0Ya94KdA&oe=62BE83C8" width="150px" alt="">
+    <h1>Welcome to JKT Digital Institute</h1>
+    <h2>Diploma in Information Technology</h2>
+    <table border="1">
+        <tr id="head">
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Father Name</th>
+            <th>Date of Birth</th>
+            <th>NRC No.</th>
+            <th>Contact No.</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Education Background</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+            <td>{{ x.fathername }}</td>
+            <td>{{ x.dateofbirth }}</td>
+            <td>{{ x.nrcno }}</td>
+            <td>{{ x.contactno }}</td>
+            <td>{{ x.emailAddress }}</td>
+            <td>{{ x.pAddress }}</td>
+            <td>{{ x.edu }}</td>
+            <td><a href="delete/{{ x.id }}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>
+        <a href="add/">Enroll Here>>></a>
+    </p>
+</body>
+</html>
